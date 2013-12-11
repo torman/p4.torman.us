@@ -1,0 +1,30 @@
+.error_msg {
+color: red;
+}
+
+label {
+/*	font-size: 20px; */
+	position: text-align:right; width:150px;
+}
+
+/*
+input {
+	position: fixed;
+	width:100px;
+	left: 200px;
+}
+*/
+
+#current_member_table {
+	border: 2px solid black;
+	text-align:center;
+	font-family:"Arial", "Corier New";
+	font-size: 15px;
+}
+
+th, td {
+	border: 1px solid black;
+	overflow: hidden;
+	width: 150px;
+	height:30px;
+}

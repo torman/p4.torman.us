@@ -1,0 +1,56 @@
+body {background-color:#D8D8D8;}
+
+.headcount {
+width: 70px;
+}
+
+.senior {
+width: 70px;
+}
+
+.children {
+width: 70px;
+}
+
+.expenses {
+width: 70px;
+}
+
+.sys_message {
+color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu { 
+font-family: Arial;
+font-weight: bold;
+height: 30px; 
+background-color:#A4A4A4; 
+text-transform:uppercase;
+vertical-align: middle; 
+}
+
+#menu_last_item { position:fixed; right: 15px;}
+
+#profile_pos { position:fixed; right: 100px;}
+
+#post_modified {
+font-size: 12px; 
+color:#585858;
+}

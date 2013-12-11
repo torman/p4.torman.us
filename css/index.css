@@ -1,0 +1,18 @@
+#example_users {
+	border: 2px solid black;
+	text-align:center;
+	font-family:"Arial", "Corier New";
+	font-size: 20px;
+}
+
+.email_col {
+	width: 200px;
+}
+
+th, td {
+	border: 1px solid black;
+	overflow: hidden;
+	width: 120px;
+	height:30px;
+}
+
