@@ -12,6 +12,7 @@
 	require_once DOC_ROOT.'environment.php'; 
    
 # Where is core located?
+	
 	define('CORE_PATH',  $_SERVER['DOCUMENT_ROOT']."/../core/");
 	   
 # Load app configs
