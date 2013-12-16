@@ -1,4 +1,4 @@
-<form method='POST' action='/users/p_family_data_edit' onsubmit="return validateFamilyData(this)">
+<form method='POST' id="family_input_data" action='/users/p_family_data_edit' onsubmit="return validateFamilyData(this)">
 	Family Name : <input type="text" name="family_name" value="<?php echo $user_family_data["family_name"];?>" readonly>can't be edited here <br><br>
 	Headcount : 		
 	<select name="headcount" style="width: 60px">
@@ -25,12 +25,10 @@
 <hr>
 
 <h2>BBQ Balance Sheet</h2>
-* click Compute to calculate the balance of each family<br>
 * positive balance means the family needs to pay the amount<br>
 * negative balance means the family overpaid and will get the amount back<br><br>
-<button type="button" onclick="computeBalance(<?php echo "'" . $user_family_data["family_name"] . "'";?>)">Compute</button><br><br>
-<!--button type="button" onclick="computeBalance()">Compute</button><br><br-->
-<table border=1 id="balancesheet" onload="computeBalance(<?php echo "'" . $user_family_data["family_name"] . "'";?>)">
+
+<table border=1 id="balancesheet">
 
 	<tr>
 		<th>Family Name</th> 
@@ -53,7 +51,7 @@
 			<td class="balance" align="right">  <?php echo "" ?> </td>
 		</tr>
 	<?php } ?>
-	<tr>
+
 		<th>Total</th> 
 		<th id='total_headcount'>--</th>  
 		<th id='total_senior'>--</th>  
@@ -63,9 +61,7 @@
 	</tr>
 
 </table>
-<script>
-window.onload="computeBalance(<?php echo "'" . $user_family_data["family_name"] . "'";?>)"
-</script>
+
 <br>
 <br>
 <br>

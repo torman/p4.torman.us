@@ -1,4 +1,10 @@
+// calculate the balance of each family
+computeBalance();
 
+// change background color for the current family in
+// balance sheet table. Then, the user can see his/her
+// family balance easily
+changeBgColorForCurrentFamily ();
 
 function validateFamilyData(formname) {
 	var headcount = formname.headcount.value;
@@ -66,9 +72,6 @@ function computeBalance(family_name) {
 
 	// this step is to double-check the total balance - it should be zero all the time
 	calTotalBalance();
-
-	changeBgColorForCurrentFamily(family_name);
-	
 }
 
 // calculate total number of people who participate the BBQ
@@ -148,14 +151,20 @@ function calTotalBalance() {
 
 // highlight the current family in the balancesheet
 // by changing the row's background color
-function changeBgColorForCurrentFamily(family_name) {
+function changeBgColorForCurrentFamily() {
 
-	// console.log(family_name);
+	// console.log("In changeBgColorForCurrentFamily");
 	$('#balancesheet tr').each(function() {
-		var className = $(this).attr("class");
-		if (className == family_name) {
+		if ($(this).attr("class")) {
+			var familyName = $(this).attr("class");
+			var currentFamilyName = $("#family_input_data input[name=family_name]").val();
+			if (familyName == currentFamilyName) {
 			// console.log("className: " + className);
-			$(this).css('background-color', 'yellow');
+				$(this).css('background-color', 'yellow');
+			}
 		}		
 	});
 }
+
+
+

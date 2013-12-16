@@ -60,7 +60,12 @@ class admin_controller extends base_controller {
 			$client_files_head = Array("/css/profile.css", "/css/admin.css");
 	    	$this->template->client_files_head = Utils::load_client_files($client_files_head);
 	    	
-	    	$client_files_body = Array("/js/profile.min.js", "/js/admin.js");
+	    	$client_files_body = Array(
+				"/js/profile.min.js", 
+				"/js/admin.js", 
+				"/js/jquery.form.js",
+				"/js/admin_family_data_edit.js");
+				
 	    	$this->template->client_files_body = Utils::load_client_files($client_files_body);   
 	      					     		
 		# Render the view
@@ -167,7 +172,7 @@ echo '</pre>';
 // echo '</pre>';		
 		DB::instance(DB_NAME)->update("families", $data, "WHERE family_name = '".$_POST["family_name"]."'");
 	
-		Router::redirect("/admin/admin");
+		// Router::redirect("/admin/admin");
 	}
 
 

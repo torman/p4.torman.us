@@ -41,6 +41,7 @@ Family name: <input type='text' name='family_name'><br>
 <hr>
 
 <!-- that will be great if this part can be hidden (optional view) -->
+<!--
 <h3>Current members</h3>
 <table border="1" id="current_member_table" >
     <tr>
@@ -61,10 +62,11 @@ Family name: <input type='text' name='family_name'><br>
 </table>
 <br>
 <hr>
+-->
 
 <h2>Update Family BBQ Data</h2>
 <?php foreach ($families as $family) { ?>
-	<form method='POST' action='/admin/p_admin_family_data_edit' >
+	<form method='POST' class="update_family_bba_data_admin" action='/admin/p_admin_family_data_edit' >
 		Family: <input type='text' name='family_name' value="<?php echo $family['family_name']?>" readonly>&nbsp;&nbsp; 
 		Headcount: 
 		<select class="admin_update_family_headcount" name="headcount" style="width: 60px">
@@ -92,6 +94,8 @@ Family name: <input type='text' name='family_name'><br>
 		<br>
 		<hr>
 	</form>
+	<div id="result"> </div>
+	
 <?php } ?>
 
 
