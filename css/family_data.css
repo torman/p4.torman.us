@@ -6,7 +6,7 @@
 }
 
 #familyname {
-	position: relative;
+	position: absolute;
 	left: 150px;
 	background:pink;
 	text-indent: 10px;
@@ -17,7 +17,7 @@
 
 
 #headcount {
-	position: fixed;
+	position: absolute;
 	left: 150px;
 	background:pink;
     width: 170px;
@@ -34,7 +34,7 @@
  }
  
 #senior {
-	position: fixed;
+	position: absolute;
 	left: 150px;
 	background:pink;
     width: 170px;
@@ -51,7 +51,7 @@
  }
  
  #children {
-	position: fixed;
+	position: absolute;
 	left: 150px;
 	background:pink;
     width: 270px;
@@ -73,7 +73,7 @@
 }
  
  #expenses  {
-	position: fixed;
+	position: absolute;
 	left: 150px;
 	background:pink;
 	text-indent: 10px;
