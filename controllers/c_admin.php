@@ -89,9 +89,9 @@ class admin_controller extends base_controller {
 		
 		$result = DB::instance(DB_NAME)->select_field($q);
 
-echo '<pre>';
-print_r($result);
-echo '</pre>';
+// echo '<pre>';
+// print_r($result);
+// echo '</pre>';
 		
 		if ($result) {
 			$message = 'Family name "' . $family_name . '" existed.';
