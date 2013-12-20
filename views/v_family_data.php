@@ -30,14 +30,22 @@
 	</select> 
 	</div>
 	
-	<div id="wrapper">
 		<div class="family-input-data-field">
-			<label class="label">Expenses :</label>  <input type="text" name="expenses" id="expenses" value="<?php echo $user_family_data["expenses"];?>"> 
+			<label class="label">Expenses :</label>
+			<input type="text" name="expenses" id="expenses" value="<?php echo $user_family_data["expenses"];?>"> 
 		</div>
-		<div>
-			<input type='submit' value='SAVE' id="save-button-holder">
-		</div>
+
+		
+			
+	<!--div class="family-input-data-field"-->		
+	<label class="label">Tasks:</label>  <input type="textarea" name="tasks" id="tasks" value="<?php echo $user_family_data["tasks"];?>"> 
+	<!--/div-->
+		
+	<div>
+		<input type='submit' value='SAVE' id="save-button-holder">
 	</div>
+	
+	
 </form>
 
 

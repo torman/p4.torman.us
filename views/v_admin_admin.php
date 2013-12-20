@@ -1,31 +1,39 @@
 <form method='POST' action='/admin/p_add_user/' onsubmit="return validateAddUser(this)">
 <h3>Add new user:</h3>
-<label class="label">Family:</label>
-<select name="family_name" id="family_name_dd">
+<label class="user-account-label">Family:</label>
+<select class="user-account-field" name="family_name" id="family_name_dd">
 	<option >Select a family</option>
 	<?php foreach ($families as $family): ?>
 		<option value="<?php echo $family['family_name'];?>"><?php echo $family['family_name'];?></option>
 	<?php endforeach; ?>>
-</select><br>
- &nbsp;&nbsp;Note: If a family is not here, please add the family first.
+</select><br><br>
+<div class="help-note">&nbsp;&nbsp;Note: If a family is not here, please add the family first.</div><br>
 <div class='error_msg' id='family_name_error'></div>
 
-Email: <input type='text' name='email' id="email"><br>
-&nbsp;&nbsp;Note: Must be a valid email address format
-
 <div class='error_msg' id='email_error'></div>
-First name: <input type='text' name='first_name'><br>
+<!--label class="user-account-label">Email: <input type='text' class="user-account-field" name='email' id="email"><br><br-->
+<label class="user-account-label">Email: </label>
+<input type='text' class="user-account-field" name='email' id="email"><br><br>
+<div class="help-note">&nbsp;&nbsp;Note: Must be a valid email address format</div><br>
+
 <div class='error_msg' id='first_name_error'></div>
-Last name: <input type='text' name='last_name'><br>
+<label class="user-account-label">First name:</label>
+<input type='text' class="user-account-field" name='first_name'><br><br>
+
 <div class='error_msg' id='last_name_error'></div>
-Password: <input type='password' name='password' id="password"><br>
-&nbsp;&nbsp;Note: At least 6 char long containing 1+ digit and 1+ special char like ($%#@&)
+<label class="user-account-label">Last name:</label>
+<input type='text' class="user-account-field" name='last_name'><br><br>
+
 <div class='error_msg' id='password_error'></div>
+<label class="user-account-label">Password:</label>
+<input type='password' class="user-account-field" name='password' id="password"><br><br>
+<div class="help-note">&nbsp;&nbsp;Note: At least 6 char long containing 1+ digit and 1+ special char like ($%#@&)</div><br>
 
-
-Retype password: <input type='password' name='password2' id="password2"><br>
 <div class='error_msg' id='password2_error'></div>
-<input type='submit' value='Add new user'>
+<label class="user-account-label">Retype password:</label>
+<input type='password' class="user-account-field" name='password2' id="password2"><br><br>
+
+<input type='submit' value='Add new user' class="submit-button">
 <br><br>
 </form>
 
@@ -34,8 +42,9 @@ Retype password: <input type='password' name='password2' id="password2"><br>
 
 <form method='POST' action='/admin/p_add_family/' id="form_add_new_family" onsubmit="return validateFamily(this)">
 <h3>Add new family:</h3>
-Family name: <input type='text' name='family_name'><br>
-<input type='submit' value='Add new family'>
+<label class="family-name-label">Family name:</label>
+<input type='text' class="family-name-field" name='family_name' ><br><br>
+<input type='submit' value='Add new family' class="submit-button">
 </form>
 <br>
 <hr>
@@ -67,30 +76,36 @@ Family name: <input type='text' name='family_name'><br>
 <h2>Update Family BBQ Data</h2>
 <?php foreach ($families as $family) { ?>
 	<form method='POST' class="update_family_bba_data_admin" action='/admin/p_admin_family_data_edit' >
-		Family: <input type='text' name='family_name' value="<?php echo $family['family_name']?>" readonly>&nbsp;&nbsp; 
+		Family: <input type='text' name='family_name' class="admin-update-family-name" 
+			value="<?php echo $family['family_name']?>" readonly>&nbsp;&nbsp; 
 		Headcount: 
-		<select class="admin_update_family_headcount" name="headcount" style="width: 60px">
+		<select class="admin-update-family-headcount" name="headcount" style="width: 60px">
 			<?php for ($i = 0; $i <=6; $i++ ) { ?>
 			<option  <?php if ($i == $family['headcount']) { echo 'selected'; } ?> > <?php echo $i;?> </option>
 			<?php } ?>
 		</select> &nbsp;&nbsp; 
 
 		Senior:  
-		<select class="admin_update_family_senior" name="senior" style="width: 60px">
+		<select class="admin-update-family-senior" name="senior" style="width: 60px">
 			<?php for ($i = 0; $i <=2; $i++ ) { ?>
 			<option  <?php if ($i == $family['senior']) { echo 'selected'; } ?> > <?php echo $i;?> </option>
 			<?php } ?>
 		</select> &nbsp;&nbsp; 
 
 		Children: 
-		<select class="admin_update_family_children" name="children" style="width: 60px">
+		<select class="admin-update-family-children" name="children" style="width: 60px">
 			<?php for ($i = 0; $i <=4; $i++ ) { ?>
 			<option  <?php if ($i == $family['children']) { echo 'selected'; } ?> > <?php echo $i;?> </option>
 			<?php } ?>
 		</select> &nbsp;&nbsp; 
 
-		Expenses: <input type='text' name='expenses' value="<?php echo $family['expenses']?>" class="admin_update_family_expenses">&nbsp;&nbsp; 
-		<input type='submit' value='UPDATE' hidden="hidden"><br>
+		Expenses: <input type='text' name='expenses' value="<?php echo $family['expenses']?>" class="admin-update-family-expenses">&nbsp;&nbsp; 
+		
+		Tasks: <input type='textarea' name='tasks' value="<?php echo $family['tasks']?>" class="admin-update-family-tasks">&nbsp;&nbsp; 
+
+		<input type='submit' value='UPDATE' hidden="hidden" class="submit-button">
+		
+		<br>
 		<br>
 		<hr>
 	</form>

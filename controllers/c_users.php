@@ -308,7 +308,7 @@ class  users_controller extends base_controller {
 		$this->template->content = View::instance('v_family_data');
 		$this->template->title = "Family Data";
 
-		$q = 'SELECT family_name, headcount, senior, children, expenses
+		$q = 'SELECT family_name, headcount, senior, children, expenses, tasks
 				FROM families f
 				INNER JOIN usersfamily uf ON f.family_id = uf.family_id
 				INNER JOIN users u ON u.user_id = uf.user_id

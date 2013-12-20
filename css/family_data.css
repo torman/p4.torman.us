@@ -5,11 +5,19 @@
 	height: 30px;
 }
 
+.family-input-data-field2 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #CC3399;
+	height: 30px;
+	width: 200px;
+}
+
 #familyname {
 	position: absolute;
 	left: 150px;
 	background:pink;
-	text-indent: 10px;
+	text-indent: 5px;
 	height: 22px;
 	font-weight: 600;
 	width: 100px;
@@ -72,11 +80,11 @@
 	height: 50px;
 }
  
- #expenses  {
+#expenses  {
 	position: absolute;
 	left: 150px;
 	background:pink;
-	text-indent: 10px;
+	text-indent: 5px;
 	height: 22px;
 	font-weight: 600;
 	color: #fff;
@@ -84,8 +92,20 @@
 	float: right;
 }
 
+#tasks  {
+	position: absolute;
+	left: 150px;
+	background:pink;
+	text-indent: 5px;
+	height: 50px;
+	font-weight: 600;
+	color: #fff;
+	width: 350px;
+/*	float: right; */
+}
+
 #save-button-holder {
-	background-color: green;
+	background-color: #04B431;
 	font-weight: 600;
 	float: left;
 }

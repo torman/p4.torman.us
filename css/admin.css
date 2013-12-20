@@ -37,3 +37,112 @@ th, td {
 	width: 150px;
 	height:30px;
 }
+
+.help-note {
+	font-size: 12px;
+	color: dark grey;
+	height: 20px;
+}
+
+.submit-button {
+	background-color: #04B431;
+	font-weight: 600;
+	height: 30px;
+}
+
+.user-account-field {
+	position: absolute;
+	left: 150px;
+	background:pink;
+	text-indent: 10px;
+	height: 22px;
+	font-weight: 600;
+	width: 150px;
+}
+
+.user-account-label {
+/*	position: absolute; */
+	left: 150px;
+	background:pink;
+	text-indent: 10px;
+	height: 22px;
+	font-weight: 600;
+	width: 100px;
+}
+
+.famiy-name-label {
+/*	position: absolute; */
+/*	left: 150px; */
+	background:pink;
+	text-indent: 10px;
+	height: 22px;
+	font-weight: 600;
+	width: 100px;
+}
+
+.family-name-field {
+	position: absolute;
+	left: 120px;
+	background:pink;
+	text-indent: 10px;
+	height: 22px;
+	font-weight: 600;
+	width: 150px;
+}
+
+.admin-update-family-name, .admin-update-family-expenses {
+	background: pink;
+	height: 22px;
+	width: 80px;
+	text-indent: 5px;
+	font-weight: 600;
+}
+
+.admin-update-family-expenses {
+	background: pink;
+	height: 22px;
+	width: 50px;
+	text-indent: 5px;
+	font-weight: 600;
+}
+
+.admin-update-family-headcount,
+.admin-update-family-senior,
+.admin-update-family-children {
+	background: pink;
+	height: 22px;
+	font-weight: 600;
+}
+
+.admin-update-family-tasks {
+	background: pink;
+	height: 40px;
+	width: 100;
+	font-weight: 600;
+	font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

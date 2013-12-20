@@ -2,7 +2,7 @@ $('#family_name').blur(function(callback) {
 	var value = $(this).find(":selected").text();
 	// console.log(value);
 	if (value == "" || value == "Select a family") {
-		$('#family_name_error').html("This field can't be empty");
+		$('#family_name_error').html("** This field can't be empty");
 	} else {
 		$('#family_name_error').html("");
  	}
@@ -16,7 +16,7 @@ $('input[name=email]').blur(function(callback) {
 	} else {
 		var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 		if (!emailRegex.test(value)) {
-			$('#email_error').html("This is not a valid email address");
+			$('#email_error').html("** This is not a valid email address");
 			console.log("This is not a valid email address");
 		} else {
 			$('#email_error').html("");
@@ -27,7 +27,7 @@ $('input[name=email]').blur(function(callback) {
 
 $('input[name=first_name]').blur(function(callback) {
 	if ($(this).val() == "") {
-		$('#first_name_error').html("This field can't be empty");
+		$('#first_name_error').html("** This field can't be empty");
 	} else {
 		$('#first_name_error').html("");
 	}
@@ -35,7 +35,7 @@ $('input[name=first_name]').blur(function(callback) {
 
 $('input[name=last_name]').blur(function(callback) {
 	if ($(this).val() == "") {
-		$('#last_name_error').html("This field can't be empty");
+		$('#last_name_error').html("** This field can't be empty");
 	} else {
 		$('#last_name_error').html("");
 	}
@@ -45,7 +45,7 @@ $('input[name=password]').blur(function(callback) {
 	var value = $(this).val();
 	var msg = "";
 	if ( value == "") {
-		$('#password_error').html("This field can't be empty");
+		$('#password_error').html("** This field can't be empty");
 	} else {
 		if (value.length < 6) {
 			msg = msg + "at least 6 characters long" + "<br>";
@@ -67,7 +67,7 @@ $('input[name=password2]').blur(function(callback) {
 	var password = $('input[name=password]').val();
 	
 	if ( password2 != password) {
-		$('#password2_error').html("Password is not matched");
+		$('#password2_error').html("** Password is not matched");
 	} else {
 		$('#password2_error').html("");
 	}
@@ -76,7 +76,7 @@ $('input[name=password2]').blur(function(callback) {
 function validateFamily(formname) {
 	if (formname.family_name.value == "") {
 		alert ("Family name can't be empty");
-		console.log("Family name can't be empty");
+		// console.log("Family name can't be empty");
 		return false;
 	}
 	else {
@@ -107,7 +107,7 @@ function validateAddUser(formname) {
 		if (!emailRegex.test(email)) {
 			error_msg = error_msg + "Email address is invalid\n";
 			error_found++ ;
-			console.log("This is not a valid email address");
+			// console.log("This is not a valid email address");
 		}
  	}	
 
@@ -164,22 +164,27 @@ function validateAddUser(formname) {
  	
 }	
 
-$(".admin_update_family_headcount").on("change", function() {
+$(".admin-update-family-headcount").on("change", function() {
 	var submit_button = $(this).closest('form').find(':submit');
 	submit_button.show();
 })
 
-$(".admin_update_family_senior").on("change", function() {
+$(".admin-update-family-senior").on("change", function() {
 	var submit_button = $(this).closest('form').find(':submit');
 	submit_button.show();
 })
 
-$(".admin_update_family_children").on("change", function() {
+$(".admin-update-family-children").on("change", function() {
 	var submit_button = $(this).closest('form').find(':submit');
 	submit_button.show();
 })
 
-$(".admin_update_family_expenses").on("change", function() {
+$(".admin-update-family-expenses").on("change", function() {
+	var submit_button = $(this).closest('form').find(':submit');
+	submit_button.show();
+})
+
+$(".admin-update-family-tasks").on("change", function() {
 	var submit_button = $(this).closest('form').find(':submit');
 	submit_button.show();
 })
