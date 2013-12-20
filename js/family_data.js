@@ -7,38 +7,31 @@ computeBalance();
 changeBgColorForCurrentFamily ();
 
 function validateFamilyData(formname) {
-	var headcount = formname.headcount.value;
-	var senior = formname.senior.value;
-	var children = formname.children.value;
-	var expenses = formname.expenses.value;
-	var intRegex = /^\d+$/;
+	var headcount;
+	var senior ;
+	var children ;
+	var expenses = formname.expenses.value ;
 	var error_count = 0;
 	var error_msg = "";
-	
-	if (!intRegex.test(headcount)) {
-		error_msg = error_msg  + "Headcount must be an integer.\n";
-		error_count++;
-	}
-	
-	if (!intRegex.test(senior)) {
-		error_msg = error_msg  + "Senior must be an integer.\n";
-		error_count++;
-	}
-	
-	if (!intRegex.test(children)) {
-		error_msg = error_msg  + "Children must be an integer.\n";
-		error_count++;
-	}
 
-	var subtotal = parseInt(senior) + parseInt(children);
-	// console.log(subtotal);
-	if (parseInt(headcount) < subtotal) {
-		error_msg = error_msg  + "Headcount must not be less than the sum of senior and children.\n";		
+	// still not able to access headcount via formname,
+	// so I use document.getElementById
+	e = document.getElementById('headcount');
+	headcount = e.options[e.selectedIndex].value;
+
+	e = document.getElementById('senior');
+	senior = e.options[e.selectedIndex].value;
+
+	e = document.getElementById('children');
+	children = e.options[e.selectedIndex].value;
+
+	if ( parseInt(headcount) < (parseInt(senior) + parseInt(children)) ) {
+		error_msg = error_msg  + "Headcount must not be lesser than the sum of senior and children.\n";
 		error_count++;
 	}
 	
-	// console.log ("Expenes: " + parseFloat(expenses));
-	if (isNaN(parseFloat(expenses)) ) {
+	var reg = new RegExp("^[-]?[0-9]+[\.]?[0-9]+$");
+	if (!reg.test(expenses)) {
 		error_msg = error_msg  + "Expenses must be a number.\n";		
 		error_count++;
 	}
@@ -52,6 +45,7 @@ function validateFamilyData(formname) {
 		return true;
 	}
 }
+
 
 function computeBalance(family_name) {
 

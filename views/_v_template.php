@@ -33,8 +33,15 @@
  
     <br>
 	
-	<?php if(isset($message)) echo "<div class=\"sys_message\"> ** $message </div>"; ?>
-
+	<?php if(isset($message)) { 
+		if (isset($message_type) && ($message_type == 1)) {  
+			echo "<div class=\"sys_message\"> ** $message </div>"; 
+		} else { 
+			echo "<div class=\"sys_error\"> ** ERROR: $message </div>"; 
+		} 
+	} ?>
+	
+	
 	<?php if(isset($content)) echo $content; ?>
 
 	<?php if(isset($client_files_body)) echo $client_files_body; ?>

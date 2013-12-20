@@ -325,7 +325,7 @@ class  users_controller extends base_controller {
 // echo '</pre>';		
 		$this->template->content->families_data = $families_data;
 
-		$client_files_head = Array("/css/balancesheet.css");
+		$client_files_head = Array("/css/balancesheet.css", "/css/family_data.css");
 		$this->template->client_files_head = Utils::load_client_files($client_files_head);
 		
 		$client_files_body = Array("/js/profile.min.js", "/js/family_data.js");

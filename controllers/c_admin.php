@@ -12,7 +12,7 @@ class admin_controller extends base_controller {
 	/*-------------------------------------------------------------------------------------------------
 	Accessed via http://localhost/admin/admin/
 	-------------------------------------------------------------------------------------------------*/
-	public function admin($message = NULL) {
+	public function admin($message = NULL, $message_type = NULL) {
 
 		if ($this->user->role != 1) {
 			$message = "Only admin can access the admin page";
@@ -26,6 +26,7 @@ class admin_controller extends base_controller {
 		$this->template->title = APP_NAME;
 
 		$this->template->message = $message;
+		$this->template->message_type = $message_type;
 
 		$q = 'SELECT family_name, u.last_name, u.first_name, u.email
 				FROM families f
@@ -57,7 +58,8 @@ class admin_controller extends base_controller {
 		$this->template->content->families  = $families ;
 		
 		# CSS/JS includes
-			$client_files_head = Array("/css/profile.css", "/css/admin.css");
+			// $client_files_head = Array("/css/profile.css", "/css/admin.css");
+			$client_files_head = Array("/css/admin.css");
 	    	$this->template->client_files_head = Utils::load_client_files($client_files_head);
 	    	
 	    	$client_files_body = Array(
@@ -93,16 +95,13 @@ echo '</pre>';
 		
 		if ($result) {
 			$message = 'Family name "' . $family_name . '" existed.';
-			$redirect_path = "/admin/admin/$message";
-			// echo $redirect_path;
-			// Router::redirect($redirect_path);
+			$message_type = 0;
 		} else {
-			
 			DB::instance(DB_NAME)->insert('families', $_POST);
-			$message = "Family " . $family_name . " has been added.";
+			$message = 'Family "' . $family_name . '" has been added.';
+			$message_type = 1;
 		}
-		$redirect_path = "/admin/admin/$message";
-		// $redirect_path = "/admin/admin/";
+		$redirect_path = "/admin/admin/$message/$message_type";
 		
  		Router::redirect($redirect_path);
 	} # End of method

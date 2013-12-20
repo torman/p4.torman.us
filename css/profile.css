@@ -1,4 +1,9 @@
-body {background-color:#D8D8D8;}
+body {
+background-image: url('../images/background.jpg') ;
+background-size: cover;
+background-repeat: no-repeat;
+background-color:#D8D8D8;
+}
 
 .headcount {
 width: 70px;
@@ -17,9 +22,26 @@ width: 70px;
 }
 
 .sys_message {
-color: red;
+/*color: green;*/
+border-style: solid green;
+border-width:3px ;
+height: 30px;
+width: 100%;
+background-color: green;
+
 }
 
+.sys_error {
+/* color: red; */
+border-style: solid black;
+border-color: black;
+border-width:3px ;
+height: 30px;
+line-height: 30px;
+width: 100%;
+background-color: red;
+vertical-align: middle;
+}
 
 
 

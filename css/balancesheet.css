@@ -2,4 +2,24 @@
 text-align: right;
 color: black;
 font-weight: bold;
+/* background-color: grey; */
+}
+
+#balancesheet {
+background-color: grey;
+border: 10px solid green;
+/*border-style: black solid;*/
+border-radius: 10px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+
+}
+
+.balancesheet_family_name {
+text-indent: 10px;
+
+}
+
+.balancesheet_notes {
+color: blue;
 }

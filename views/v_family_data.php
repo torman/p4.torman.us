@@ -1,32 +1,49 @@
 <form method='POST' id="family_input_data" action='/users/p_family_data_edit' onsubmit="return validateFamilyData(this)">
-	Family Name : <input type="text" name="family_name" value="<?php echo $user_family_data["family_name"];?>" readonly>can't be edited here <br><br>
-	Headcount : 		
-	<select name="headcount" style="width: 60px">
+
+	<div class="family-input-data-field"> <label>Family Name :</label>
+		<input type="text" name="family_name" id="familyname" value="<?php echo $user_family_data["family_name"];?>" readonly>
+	</div>
+		
+	<div class="family-input-data-field"><label>Headcount :</label> 		
+	<select name="headcount" id="headcount" style="width: 60px">
 		<?php for ($i = 0; $i <=6; $i++ ) { ?>
 		<option  <?php if ($i == $user_family_data['headcount']) { echo 'selected'; } ?> > <?php echo $i;?> </option>
 		<?php } ?>
-	</select> &nbsp;&nbsp; sum of senior and children can't be larger than headcount <br><br>
-	Senior :  
-	<select name="senior" style="width: 60px">
+	</select>
+	</div>
+	
+	<div class="family-input-data-field">
+	<label class="label">Senior :</label>   
+	<select name="senior" id="senior" style="width: 60px">
 		<?php for ($i = 0; $i <=2; $i++ ) { ?>
 		<option  <?php if ($i == $user_family_data['senior']) { echo 'selected'; } ?> > <?php echo $i;?> </option>
 		<?php } ?>
-	</select> &nbsp;&nbsp;	sum of senior and children can't be larger than headcount<br><br>
-	Children : 
-	<select name="children" style="width: 60px">
+	</select>
+	</div>
+	
+	<div class="family-input-data-field">
+	<label class="label">Children :</label>  
+	<select name="children" id="children" style="width: 60px">
 		<?php for ($i = 0; $i <=4; $i++ ) { ?>
 		<option  <?php if ($i == $user_family_data['children']) { echo 'selected'; } ?> > <?php echo $i;?> </option>
 		<?php } ?>
-	</select> &nbsp;&nbsp; sum of senior and children can't be larger than headcount<br><br>
-	Expenses : <input type="text" name="expenses" value="<?php echo $user_family_data["expenses"];?>"> must be a number<br><br>
-
-    <input type='submit' value='Save'>
+	</select> 
+	</div>
+	
+	<div id="wrapper">
+		<div class="family-input-data-field">
+			<label class="label">Expenses :</label>  <input type="text" name="expenses" id="expenses" value="<?php echo $user_family_data["expenses"];?>"> 
+		</div>
+		<div>
+			<input type='submit' value='SAVE' id="save-button-holder">
+		</div>
+	</div>
 </form>
-<hr>
 
-<h2>BBQ Balance Sheet</h2>
-* positive balance means the family needs to pay the amount<br>
-* negative balance means the family overpaid and will get the amount back<br><br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<h3>Balance Sheet</h3>
+
 
 <table border=1 id="balancesheet">
 
@@ -41,7 +58,7 @@
 	<?php
 	foreach ($families_data as $family_data) { ?>
 		<tr class="<?php echo $family_data["family_name"] ?>">
-			<td>  <?php echo $family_data["family_name"] ?> </td>
+			<td class="balancesheet_family_name">  <?php echo $family_data["family_name"] ?> </td>
 			<td class="headcount" align="center">  <?php echo $family_data["headcount"] ?> </td>
 			<td class="senior" align="center">  <?php echo $family_data["senior"] ?> </td>
 			<td class="children" align="center">  <?php echo $family_data["children"] ?> </td>
@@ -61,7 +78,7 @@
 	</tr>
 
 </table>
-
-<br>
-<br>
-<br>
+<div class="balancesheet_notes">
+* positive balance means the family needs to pay the amount<br>
+* negative balance means the family overpaid and will get the amount back<br>
+</div>

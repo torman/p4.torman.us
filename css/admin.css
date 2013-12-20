@@ -1,3 +1,12 @@
+/* admin page needs a plain color background image */
+body {
+background-image: url('../images/background_admin.jpg') ;
+background-size: cover;
+background-repeat: no-repeat;
+background-color:#D8D8D8;
+}
+
+
 .error_msg {
 color: red;
 }

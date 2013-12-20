@@ -1,0 +1,93 @@
+.family-input-data-field {
+	font-size: 20px;
+	font-weight: 600;
+	color: #CC3399;
+	height: 30px;
+}
+
+#familyname {
+	position: fixed;
+	left: 150px;
+	background:pink;
+	text-indent: 10px;
+	height: 22px;
+	font-weight: 600;
+	width: 100px;
+}
+
+
+#headcount {
+	position: fixed;
+	left: 150px;
+	background:pink;
+    width: 170px;
+    padding: 2px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:#fff;
+    line-height: 1;
+    border: 0;
+    border-radius: 10;
+    height: 22px;
+    -webkit-appearance: none;
+ }
+ 
+#senior {
+	position: fixed;
+	left: 150px;
+	background:pink;
+    width: 170px;
+    padding: 2px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:#fff;
+    line-height: 1;
+    border: 0;
+    border-radius: 10;
+    height: 22px;
+    -webkit-appearance: none;
+ }
+ 
+ #children {
+	position: fixed;
+	left: 150px;
+	background:pink;
+    width: 270px;
+    padding: 2px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:#fff;
+    line-height: 1;
+    border: 0;
+    border-radius: 10;
+    height: 22px;
+    -webkit-appearance: none;
+ }
+ 
+#wrapper {
+	width: 400px;
+	height: 50px;
+}
+ 
+ #expenses  {
+	position: fixed;
+	left: 150px;
+	background:pink;
+	text-indent: 10px;
+	height: 22px;
+	font-weight: 600;
+	color: #fff;
+	width: 70px;
+	float: right;
+}
+
+#save-button-holder {
+	background-color: green;
+	font-weight: 600;
+	float: left;
+}
+
+
