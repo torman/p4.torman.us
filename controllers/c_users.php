@@ -312,13 +312,15 @@ class  users_controller extends base_controller {
 				FROM families f
 				INNER JOIN usersfamily uf ON f.family_id = uf.family_id
 				INNER JOIN users u ON u.user_id = uf.user_id
-				WHERE u.user_id = "' . $this->user->user_id . '"';
+				WHERE u.user_id = "' . $this->user->user_id . '"' ;
 				
 		$user_family_data = DB::instance(DB_NAME)->select_row($q);		
 
 		$this->template->content->user_family_data = $user_family_data;
 
-		$q = 'SELECT * FROM families' ;		
+		// $q = 'SELECT * FROM families' ;		
+		$q = 'SELECT * FROM families ORDER BY family_name' ;
+		
 		$families_data = DB::instance(DB_NAME)->select_rows($q);
 // echo '<pre>';
 // print_r($families_data);

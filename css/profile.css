@@ -23,12 +23,16 @@ width: 70px;
 
 .sys_message {
 /*color: green;*/
-border-style: solid green;
+border-style: solid black;
+border-color: black;
 border-width:3px ;
-height: 30px;
+height: 50px;
+line-height: 50px;
 width: 100%;
 background-color: green;
-
+vertical-align: middle;
+font-weight: 600;
+font-size:20px;
 }
 
 .sys_error {
@@ -36,28 +40,14 @@ background-color: green;
 border-style: solid black;
 border-color: black;
 border-width:3px ;
-height: 30px;
-line-height: 30px;
+height: 50px;
+line-height: 50px;
 width: 100%;
 background-color: red;
 vertical-align: middle;
+font-weight: 600;
+font-size:20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #menu { 
 font-family: Arial;
@@ -68,7 +58,7 @@ text-transform:uppercase;
 vertical-align: middle; 
 }
 
-#menu_last_item { position:fixed; right: 15px;}
+#menu_last_item { position:absolute; right: 15px;}
 
 #profile_pos { position:fixed; right: 100px;}
 

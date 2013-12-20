@@ -114,7 +114,8 @@ class admin_controller extends base_controller {
 		if ($result) { 
 			$error = TRUE;
 			$message = "This email " . $_POST['email'] . " has been used. Please use another one.";
-			$redirect_path = "/admin/admin/$message";
+			$message_type = 0;
+			$redirect_path = "/admin/admin/$message/$message_type";
 			Router::redirect($redirect_path);
 		}
 
@@ -158,7 +159,8 @@ class admin_controller extends base_controller {
 		DB::instance(DB_NAME)->insert('usersfamily', $_POST);
 		
 		$message = "New user '" . $first_name . "' is added and joined to family '" . $family_name . "'.";
-		$redirect_path = "/admin/admin/$message";
+		$message_type = 1; 
+		$redirect_path = "/admin/admin/$message/$message_type";
 		Router::redirect($redirect_path);
 
 	} # End of method p_add_user
