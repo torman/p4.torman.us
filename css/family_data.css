@@ -6,7 +6,7 @@
 }
 
 #familyname {
-	position: fixed;
+	position: relative;
 	left: 150px;
 	background:pink;
 	text-indent: 10px;
