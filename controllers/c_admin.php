@@ -46,7 +46,7 @@ class admin_controller extends base_controller {
 		// $q = 'SELECT family_id, family_name
 				// FROM families';
 
-		$q = 'SELECT * FROM families';
+		$q = 'SELECT * FROM families ORDER BY family_name';
 				
 		$families = DB::instance(DB_NAME)->select_rows($q);
 				

@@ -22,7 +22,7 @@
 
 			<!-- Menu for users who are logged in -->
 			<?php if($user) { ?>
-				<a href='/users/family_data_edit' title="update family data for BBQ" id='update'>UPDATE</a>&nbsp;&nbsp;
+				<a href='/users/family_data_edit' title="update family data for BBQ" id='update'>BBQ DATA</a>&nbsp;&nbsp;
 				<?php if ($user->role == 1) { ?>
 					<a href='/admin/admin' title="admin">Admin</a>&nbsp;&nbsp;
 				<?php } ?>	

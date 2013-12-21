@@ -39,9 +39,10 @@ th, td {
 }
 
 .help-note {
-	font-size: 12px;
+	font-size: 14px;
 	color: dark grey;
 	height: 20px;
+
 }
 
 .submit-button {
@@ -114,12 +115,14 @@ th, td {
 	font-weight: 600;
 }
 
+
 .admin-update-family-tasks {
 	background: pink;
 	height: 40px;
 	width: 100;
 	font-weight: 600;
-	font-size: 10px;
+	font-size: 12px;
+	vertical-align: top;
 }
 
 

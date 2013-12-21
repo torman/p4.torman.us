@@ -73,7 +73,7 @@
 <hr>
 -->
 
-<h2>Update Family BBQ Data</h2>
+<h3>Update BBQ Data</h3>
 <?php foreach ($families as $family) { ?>
 	<form method='POST' class="update_family_bba_data_admin" action='/admin/p_admin_family_data_edit' >
 		Family: <input type='text' name='family_name' class="admin-update-family-name" 
@@ -101,7 +101,7 @@
 
 		Expenses: <input type='text' name='expenses' value="<?php echo $family['expenses']?>" class="admin-update-family-expenses">&nbsp;&nbsp; 
 		
-		Tasks: <input type='textarea' name='tasks' value="<?php echo $family['tasks']?>" class="admin-update-family-tasks">&nbsp;&nbsp; 
+		Tasks: <textarea cols="20" rows="3" name='tasks' class="admin-update-family-tasks"><?php echo $family['tasks']?></textarea>
 
 		<input type='submit' value='UPDATE' hidden="hidden" class="submit-button">
 		

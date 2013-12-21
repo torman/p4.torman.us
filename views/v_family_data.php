@@ -37,9 +37,9 @@
 
 		
 			
-	<!--div class="family-input-data-field"-->		
-	<label class="label">Tasks:</label>  <input type="textarea" name="tasks" id="tasks" value="<?php echo $user_family_data["tasks"];?>"> 
-	<!--/div-->
+	<div class="family-input-data-field2">		
+	<label class="label">Tasks:</label>  <textarea cols="60" rows="3" name="tasks" id="tasks" ><?php echo $user_family_data["tasks"];?></textarea> 
+	</div>
 		
 	<div>
 		<input type='submit' value='SAVE' id="save-button-holder">
@@ -49,7 +49,7 @@
 </form>
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <h3>Balance Sheet</h3>
 
 
@@ -62,6 +62,7 @@
 		<th>Children</th> 
 		<th>Expenses</th> 
 		<th>Balance</th>
+		<th>Tasks</th>		
 	</tr>
 	<?php
 	foreach ($families_data as $family_data) { ?>
@@ -74,6 +75,8 @@
 			<td class="expenses" align="right" >  <?php echo number_format($family_data["expenses"], 2) ?> </td>
 			<!--td class="balance">  <?php echo $family_data["balance"] ?> </td-->
 			<td class="balance" align="right">  <?php echo "" ?> </td>
+			<td class="tasks" align="right">  <?php echo $family_data["tasks"] ?> </td>
+			
 		</tr>
 	<?php } ?>
 
@@ -83,6 +86,7 @@
 		<th id='total_children'>--</th> 
 		<th id='total_expenses'>--</th> 
 		<th id='total_balance'>--</th>
+		<th></th>
 	</tr>
 
 </table>
